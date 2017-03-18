@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfiniteArcade.CSharp", "InfiniteArcade.CSharp.csproj", "{774C98ED-DD02-0665-7DEF-D7328DF7164A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{774C98ED-DD02-0665-7DEF-D7328DF7164A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774C98ED-DD02-0665-7DEF-D7328DF7164A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774C98ED-DD02-0665-7DEF-D7328DF7164A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774C98ED-DD02-0665-7DEF-D7328DF7164A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
