@@ -1,0 +1,11 @@
+*.sln binary
+*.suo binary
+*.vcxproj binary
+*.meta binary
+*.mat binary
+*.asset binary
+*.db binary
+*.prefs binary
+*.xml binary
+*.unity binary
+*.prefab binary
