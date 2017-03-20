@@ -6,6 +6,7 @@ public class ItemsMoving : MonoBehaviour
 {
     public float Speed;
     public float Bonus;
+    public float KillZone = -10;
     // Use this for initialization
     void Start()
     {
@@ -16,5 +17,9 @@ public class ItemsMoving : MonoBehaviour
     void Update()
     {
         this.gameObject.transform.Translate(Speed * Time.deltaTime, 0, 0, Space.World);
+        if(this.gameObject.transform.position.x < KillZone)
+        {
+            Destroy(gameObject);
+        }
     }
 }
