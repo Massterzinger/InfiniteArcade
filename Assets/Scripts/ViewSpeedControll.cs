@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class ViewSpeedControll : MonoBehaviour {
     public float TotalSpeed = 1;
-    public float MaxSpeed = 1.06f;
+    public float MaxSpeed = 1.05f;
     public float UpdationStepDelay = 5;
     public float UpdationStepValue = 0.0001f;
     public GameObject ItemsGenerator;
     Parallaxer[] px;
     ItemGenerator gen;
+    Coroutine c;
 	// Use this for initialization
 	void Start () {
         px = GetComponentsInChildren<Parallaxer>();
         gen = ItemsGenerator.GetComponent<ItemGenerator>();
-        var c = StartCoroutine(SpeedUpdater());
+        c = StartCoroutine(SpeedUpdater());
     }
 	public void UpdateParallax()
     {
@@ -29,12 +30,16 @@ public class ViewSpeedControll : MonoBehaviour {
         WaitForSeconds delay = new WaitForSeconds(UpdationStepDelay);
         while (true)
         {
-            yield return delay;
-            TotalSpeed += UpdationStepValue;
-            gen.StartSpeed -= gen.SpeedIncreaser;
+            yield return delay;            
             if (TotalSpeed <= MaxSpeed)
             {
+                TotalSpeed += UpdationStepValue;
+                gen.StartSpeed *= TotalSpeed;
                 UpdateParallax();
+            }
+            else
+            {
+                StopCoroutine(c);
             }
         }
     }

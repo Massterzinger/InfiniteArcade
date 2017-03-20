@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemGenerator : MonoBehaviour {
-    public float Bounds = 8;
+    public float Bounds = 3.45f;
     public float generationStepDelay;
     public float StartSpeed = -2.5f;
-    public float SpeedIncreaser = 1;
     public GameObject[] SomeItem;
     
 

@@ -7,23 +7,25 @@ public class PlayerControll : MonoBehaviour
 {
     public float Power;
     public Text PowerText;
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
+    public GameObject MenuPanel;
+    public Text EndText;
     // Update is called once per frame
     void Update()
     {
-        //if (Input.touchCount > 0 && Input.GetTouch(Input.touchCount - 1).phase == TouchPhase.Ended) //place this when compile to Device
-        if(Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0 && Input.GetTouch(Input.touchCount - 1).phase == TouchPhase.Ended) //place this when compile to Device
+        //if(Input.GetMouseButtonDown(0))
         {
             if (Power > 0)
             {
                 Physics2D.gravity = -Physics2D.gravity;
                 Power -= 1;
                 UpdatePower(Power);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                MenuPanel.SetActive(true);
+                EndText.text += Time.time;
             }
         }
     }
@@ -35,11 +37,17 @@ public class PlayerControll : MonoBehaviour
             Power += other.gameObject.GetComponent<ItemsMoving>().Bonus;
             UpdatePower(Power);
             Destroy(other.gameObject);
+
         }
     }
 
     void UpdatePower(float Pow)
     {
         PowerText.text = "Power: " + Pow;
+    }
+
+    public void GameOver()
+    {
+
     }
 }
